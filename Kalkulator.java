@@ -6,7 +6,7 @@ public class Kalkulator {
         System.out.println("-----------------");
 
         int a = Utils.inputIntStatic("Podaj pierwszą liczbę: ");
-        String sign = inputString("Podaj znak operacji (+, -): ");
+        String sign = inputString("Podaj znak operacji (+, -, *, /): ");
         int b = Utils.inputIntStatic("Podaj drugą liczbę: ");
 
         System.out.println("-----------------");
@@ -18,7 +18,16 @@ public class Kalkulator {
             case "-":
                 System.out.println("a - b = " + (a - b));
                 break;
-
+            case "*":
+                System.out.println("a * b = " + (a * b));
+                break;
+            case "/":
+                if (b==0){
+                    System.out.println("b is zero");
+                } else {
+                    System.out.println("a / b = " + (a / b));
+                }
+                break;
             default:
                 System.out.println("Podano błędną operację");
         }
