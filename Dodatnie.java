@@ -1,19 +1,25 @@
+import java.util.Scanner;
+
 public class Dodatnie {
     public static void main(String[] args) {
-        int number = Utils.inputIntStatic("Podaj liczbę: ");
+        Scanner scanner = new Scanner(System.in);
 
-        if (number < 0) {
-            System.out.println("Podana liczba jest liczbą ujemną");
+        // Pobieranie liczby od użytkownika
+        System.out.print("Podaj liczbę całkowitą dodatnią: ");
+        int number = scanner.nextInt();
+
+        // Sprawdzenie, czy liczba jest dodatnia
+        if (number <= 0) {
+            System.out.println("Podana liczba nie jest dodatnia. Uruchom program ponownie i podaj poprawną wartość.");
         } else {
-            for (int i = 0; i <= number; i++) {
-                if (i % 2 != 0) {
-                    if (i < number) {
-                        System.out.print(i + ", ");
-                    } else {
-                        System.out.print(i + ".");
-                    }
-                }
+            System.out.println("Liczby nieparzyste nie większe od " + number + ":");
+
+            // Wypisanie liczb nieparzystych
+            for (int i = 1; i <= number; i += 2) {
+                System.out.print(i + " ");
             }
         }
+
+        scanner.close();
     }
 }
